@@ -3,7 +3,8 @@ package com.arch.calculator.domain;
 import lombok.Data;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import javax.persistence.*;
+import javax.persistence.Id;
+import javax.persistence.Lob;
 
 @Data
 @Document
