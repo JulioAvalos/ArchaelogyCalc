@@ -35,7 +35,7 @@ public class ArtifactController {
     public ResponseEntity<Artifact> registrar(@RequestBody Artifact Artifact) {
         var obj = service.add(Artifact);
         var location = ServletUriComponentsBuilder.fromCurrentRequest()
-                .path("/{id}").buildAndExpand(obj.getIdArtifact())
+                .path("/{id}").buildAndExpand(obj.get_id())
                 .toUri();
         return ResponseEntity.created(location).build();
     }
@@ -49,7 +49,7 @@ public class ArtifactController {
     @DeleteMapping("/{id}")
     public ResponseEntity<Object> eliminar(@PathVariable Long id) {
         var obj = service.getById(id);
-        if (obj.getIdArtifact() != null) {
+        if (obj.get_id() != null) {
             service.remove(id);
         }
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);

@@ -1,0 +1,9 @@
+{
+  "properties": [
+    {
+      "name": "rune.materials.apihost",
+      "type": "java.lang.String",
+      "description": "Description for rune.materials.apihost."
+    }
+  ]
+}

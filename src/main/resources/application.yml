@@ -13,3 +13,7 @@
 #    generate-ddl: true
 #    hibernate:
 #      ddl-auto: update
+
+rune:
+  materials:
+    apihost: http://services.runescape.com/m=itemdb_rs/api/catalogue/detail.json?item=

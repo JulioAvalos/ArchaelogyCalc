@@ -35,7 +35,7 @@ public class RecipeController {
     public ResponseEntity<Recipe> registrar(@RequestBody Recipe recipe) {
         var obj = service.add(recipe);
         var location = ServletUriComponentsBuilder.fromCurrentRequest()
-                .path("/{id}").buildAndExpand(obj.getIdRecipe())
+                .path("/{id}").buildAndExpand(obj.get_id())
                 .toUri();
         return ResponseEntity.created(location).build();
     }
@@ -49,7 +49,7 @@ public class RecipeController {
     @DeleteMapping("/{id}")
     public ResponseEntity<Object> eliminar(@PathVariable Long id) {
         var obj = service.getById(id);
-        if (obj.getIdRecipe() != null) {
+        if (obj.get_id() != null) {
             service.remove(id);
         }
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
